@@ -3,7 +3,8 @@
 # -----------------------------------------------------------------------------
 FROM golang:1.13.4-alpine3.10 as BUILD
 
-ARG BRANCH="master"
+ARG GITHUB_HEAD_REF="master"
+ARG GITHUB_EVENT_NAME="push"
 
 # Add github
 RUN apk update && \
@@ -13,12 +14,18 @@ RUN apk update && \
 
 WORKDIR /go/src
 
-RUN git clone https://github.com/senzing/git-action-slack-notification.git && \
-    cd git-action-slack-notification && \
-    git checkout ${BRANCH}
+RUN git clone https://github.com/senzing/git-action-slack-notification.git
 
-RUN go get ./... && \
-    go install ./...
+# Checkout to target branch and if not master, then locally test
+# merging master into branch.
+WORKDIR /go/src/git-action-slack-notification
+RUN git checkout ${GITHUB_HEAD_REF}; \
+    if [[ "${GITHUB_HEAD_REF}" != "master" && ${GITHUB_EVENT_NAME} == "pull_request" ]]; then \
+        git merge master; \
+    fi
+
+# Building go app
+RUN make build
 
 # -----------------------------------------------------------------------------
 # Stage: BUILD

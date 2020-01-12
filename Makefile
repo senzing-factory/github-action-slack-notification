@@ -16,16 +16,14 @@ DOCKER_IMAGE_NAME := senzing/git-action-slack-notification
 # -------------
 .PHONY: fmt
 fmt:
-	@go fmt
 	@gofmt -w -s -d configuration
-
-.PHONY: test-build
-test-build: fmt
-	@go build
+	@gofmt -w -s -d main.go
 
 .PHONY: build
-build:
-	@docker build --tag $$(basename $$(git rev-parse --show-toplevel)):$$(date +%s) --build-arg "BRANCH=$(BRANCH)" build/docker
+build: fmt
+	@go mod download && \
+     go get ./... && \
+     go install ./...
 
 # -----------------------------------------------------------------------------
 # The first "make" target runs as default.
