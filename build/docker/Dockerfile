@@ -10,7 +10,8 @@ ARG GITHUB_EVENT_NAME="push"
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache \
-        git
+        git \
+        make
 
 WORKDIR /go/src
 
