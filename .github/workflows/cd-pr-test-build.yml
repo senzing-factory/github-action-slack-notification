@@ -1,0 +1,22 @@
+name: Pull Request Locally Test Merge Into Master
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  buildTestlocallyMergeMasterIntoBranch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Print Environment Variables
+        run: printenv
+      - name: Build Docker Image
+        id: build_docker_image
+        run: |
+          docker build --tag git-action-slack-notification:${GITHUB_HEAD_REF:-${GITHUB_REF##*/}} \
+            --build-arg "GITHUB_HEAD_REF=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}" \
+            --build-arg "GITHUB_EVENT_NAME=${GITHUB_EVENT_NAME}" \
+            build/docker
+

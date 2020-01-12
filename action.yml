@@ -1,12 +1,9 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
-inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+name: 'Git Action Slack Notification'
+description: 'Slack notification sent by Git Actions'
+author: 'Senzing'
+branding:
+  icon: 'message-square'
+  color: 'purple'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.myInput }}
+  image: 'docker://senzing/git-action-slack-notification:1.0.0'
