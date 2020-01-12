@@ -27,7 +27,7 @@ FROM alpine:3.10
 
 LABEL "com.github.actions.icon"="message-square"
 LABEL "com.github.actions.color"="purple"
-LABEL "com.github.actions.name"="Slack Notification"
+LABEL "com.github.actions.name"="Git Aciton Slack Notification"
 LABEL "com.github.actions.description"="Send notification to Slack"
 
 COPY --from=BUILD /go/bin/git-action-slack-notification /usr/bin
