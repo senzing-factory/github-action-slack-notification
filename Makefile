@@ -16,9 +16,8 @@ DOCKER_IMAGE_NAME := senzing/git-action-slack-notification
 # -------------
 .PHONY: fmt
 fmt:
-	@gofmt -w -s -d command/notifier
+	@go fmt
 	@gofmt -w -s -d configuration
-	@gofmt -w -s -d internal
 
 .PHONY: test-build
 test-build: fmt

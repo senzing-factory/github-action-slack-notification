@@ -1,16 +1,15 @@
 package main
 
 import (
-	"github.com/senzing/git-action-slack-notification/command/notifier"
-	"github.com/senzing/git-action-slack-notification/configuration"
 	"github.com/pkg/errors"
+	"github.com/senzing/git-action-slack-notification/configuration"
 	"log"
 )
 
 func main() {
 	var err error
 	var config *configuration.Config
-	var slackMessage *notifier.Message
+	var slackMessage *Message
 
 	// Init configuration from environment variables
 	config = new(configuration.Config)
@@ -19,18 +18,18 @@ func main() {
 		log.Fatalf("Exception: %v", err)
 	}
 
-	slackMessage = new(notifier.Message)
+	slackMessage = new(Message)
 	slackMessage.Username = config.SlackUsername
 	slackMessage.IconURL = config.SlackIconUrl
 	slackMessage.Channel = config.SlackChannel
-	slackMessage.Attachments = []notifier.Attachment{
+	slackMessage.Attachments = []Attachment{
 		{
 			AuthorName:    config.GithubActor,
 			AuthorLink:    "http://github.com/" + config.GithubActor,
 			AuthorIconURL: "http://github.com/" + config.GithubActor + ".png?size=32",
 			Color:         config.SlackColor,
 			Title:         config.GithubEventName,
-			Fields: []notifier.Field{
+			Fields: []Field{
 				{
 					Title: "Ref",
 					Value: config.GithubRef,
@@ -59,4 +58,3 @@ func main() {
 		log.Printf("%+v", errors.Wrap(err, "Exception"))
 	}
 }
-
