@@ -9,16 +9,16 @@ jobs:
       - name: Slack Notification Demo
         uses: senzing/git-action-slack-notification@1.0.0
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_TITLE: 'Slack Notification Demo'
-          SLACK_MESSAGE: 'Demo''ing the Slack Notification'
-          SLACK_ICON: 'https://github.com/<Github User>.png?size=48'
-          SLACK_CHANNEL: 'demo-channel'
-          SLACK_COLOR: '#efefef'
-          SLACK_USERNAME: 'demo-bot'
-          GITHUB_ACTOR: ${GITHUB_ACTOR}
-          GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
-          GITHUB_REF: ${GITHUB_REF}
           GITHUB_ACTION: ${GITHUB_ACTION}
+          GITHUB_ACTOR: ${GITHUB_ACTOR}
           GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}
+          GITHUB_REF: ${GITHUB_REF}
+          GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
           GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}
+          SLACK_CHANNEL: demo-channel
+          SLACK_COLOR: '#efefef'
+          SLACK_ICON: https://github.com/<Github User>.png?size=48
+          SLACK_MESSAGE: Demo'ing the Slack Notification
+          SLACK_TITLE: Slack Notification Demo
+          SLACK_USERNAME: demo-bot
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
