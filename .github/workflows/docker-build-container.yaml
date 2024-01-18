@@ -1,0 +1,18 @@
+name: 'docker build container'
+
+on: [push]
+
+jobs:
+  docker-build-container:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build docker image
+        uses: Senzing/github-action-docker-buildx-build@v1
+        with:
+          build-options: "--build-arg \"GITHUB_HEAD_REF=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}\" \
+            --build-arg \"GITHUB_EVENT_NAME=${GITHUB_EVENT_NAME}\" "
+          context: build/docker
+          image-repository: senzing-factory/git-action-slack-notification
+          image-tag: ${{ github.ref_name }}
+          password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
