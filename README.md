@@ -31,7 +31,7 @@ Go [here](deployment/git-actions/template_git_action_slack_notification.yml) for
 
 3\. Generate Slack WebHook [here](https://entelexeia.slack.com/apps/A0F7XDUAZ-incoming-webhooks?next_id=0)
 
-4\. Encrypt Slack Webhook as a secret in the repo using this app.
+4\. Encrypt Slack Webhook as a secret in the repository using this app.
 
 ## Environment Variables
 
