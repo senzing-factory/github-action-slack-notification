@@ -4,10 +4,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/pkg/errors"
-	"github.com/senzing/git-action-slack-notification/configuration"
 	"log"
 	"net/http"
+
+	"github.com/pkg/errors"
+	"github.com/senzing/git-action-slack-notification/configuration"
 )
 
 type Message struct {
@@ -69,7 +70,7 @@ func main() {
 
 	slackMessage = new(Message)
 	slackMessage.Username = config.SlackUsername
-	slackMessage.IconURL = config.SlackIconUrl
+	slackMessage.IconURL = config.SlackIconURL
 	slackMessage.Channel = config.SlackChannel
 	slackMessage.Attachments = []Attachment{
 		{
