@@ -43,13 +43,20 @@ func (message *Message) Send(webhook string) error {
 		return err
 	}
 	msgBytes := bytes.NewBuffer(msg)
-	response, err := http.Post(webhook, "application/json", msgBytes)
+
+	request, err := http.NewRequest(http.MethodPost, webhook, msgBytes)
+	if err != nil {
+		return err
+	}
+	request.Header.Set("Content-Type", "application/json")
+
+	response, err := http.DefaultClient.Do(request)
 	if err != nil {
 		return err
 	}
 
 	if response.StatusCode >= 299 {
-		err = errors.New(fmt.Sprintf("Exception: %s", response.Status))
+		err = fmt.Errorf(fmt.Sprintf("Exception: %s", response.Status))
 	}
 	fmt.Println(response.Status)
 
