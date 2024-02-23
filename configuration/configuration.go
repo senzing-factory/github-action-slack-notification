@@ -9,7 +9,7 @@ type Config struct {
 	SlackWebhook     string
 	SlackTitle       string
 	SlackMessage     string
-	SlackIconUrl     string
+	SlackIconURL     string
 	SlackChannel     string
 	SlackColor       string
 	SlackUsername    string
@@ -45,7 +45,7 @@ func (config *Config) Init() error {
 	}
 
 	// Setting unrequired environment variables
-	config.SlackIconUrl = os.Getenv("SLACK_ICON")
+	config.SlackIconURL = os.Getenv("SLACK_ICON")
 	config.SlackChannel = os.Getenv("SLACK_CHANNEL")
 	config.SlackColor = os.Getenv("SLACK_COLOR")
 	config.SlackUsername = os.Getenv("SLACK_USERNAME")

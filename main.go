@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/pkg/errors"
-	"github.com/senzing/git-action-slack-notification/configuration"
-	"log"
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"github.com/pkg/errors"
+	"github.com/senzing/git-action-slack-notification/configuration"
+	"log"
 	"net/http"
 )
 
