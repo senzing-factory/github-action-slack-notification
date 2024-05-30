@@ -8,4 +8,4 @@ on:
 
 jobs:
   lint-code-base:
-    uses: senzing-factory/build-resources/.github/workflows/linter.yaml@v1
+    uses: senzing-factory/build-resources/.github/workflows/linter.yaml@v2
