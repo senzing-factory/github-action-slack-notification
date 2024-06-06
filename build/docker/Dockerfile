@@ -8,10 +8,10 @@ ARG GITHUB_EVENT_NAME="push"
 
 # Add github
 RUN apk update && \
-    apk upgrade && \
-    apk add --no-cache \
-        git \
-        make
+  apk upgrade && \
+  apk add --no-cache \
+  git \
+  make
 
 WORKDIR /go/src
 
@@ -21,9 +21,9 @@ RUN git clone https://github.com/senzing/git-action-slack-notification.git
 # merging master into branch.
 WORKDIR /go/src/git-action-slack-notification
 RUN git checkout ${GITHUB_HEAD_REF}; \
-    if [[ "${GITHUB_HEAD_REF}" != "master" && ${GITHUB_EVENT_NAME} == "pull_request" ]]; then \
-        git merge master; \
-    fi
+  if [[ "${GITHUB_HEAD_REF}" != "master" && ${GITHUB_EVENT_NAME} == "pull_request" ]]; then \
+  git merge master; \
+  fi
 
 # Building go app
 RUN make build
@@ -41,5 +41,9 @@ LABEL "com.github.actions.description"="Send notification to Slack"
 COPY --from=BUILD /go/bin/git-action-slack-notification /usr/bin
 COPY --from=BUILD /go/src/git-action-slack-notification/LICENSE /
 COPY --from=BUILD /go/src/git-action-slack-notification/README.md /
+
+HEALTHCHECK CMD git --version || exit 1
+
+USER 1001
 
 ENTRYPOINT ["git-action-slack-notification"]
