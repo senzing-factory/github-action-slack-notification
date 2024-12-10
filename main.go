@@ -8,7 +8,7 @@ import (
 	"net/http"
 
 	"github.com/pkg/errors"
-	"github.com/senzing/git-action-slack-notification/configuration"
+	"github.com/senzing-factory/github-action-slack-notification/configuration"
 )
 
 type Message struct {

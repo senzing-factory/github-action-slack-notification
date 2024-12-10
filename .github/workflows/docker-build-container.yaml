@@ -19,7 +19,8 @@ jobs:
       - name: build docker image
         uses: senzing-factory/github-action-docker-buildx-build@v1
         with:
-          build-options: "--build-arg \"GITHUB_HEAD_REF=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}\" \
+          build-options:
+            "--build-arg \"GITHUB_HEAD_REF=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}\" \
             --build-arg \"GITHUB_EVENT_NAME=${GITHUB_EVENT_NAME}\" "
           context: build/docker
           image-repository: senzing-factory/${{ steps.repo-basename.outputs.repo }}
