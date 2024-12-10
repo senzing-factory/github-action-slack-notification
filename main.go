@@ -57,7 +57,7 @@ func (message *Message) Send(webhook string) error {
 
 	if response.StatusCode >= 299 {
 		formatted := fmt.Sprintf("Exception: %s", response.Status)
-		err = fmt.Errorf("%s\n", formatted)
+		err = fmt.Errorf("%s", formatted)
 	}
 	fmt.Println(response.Status)
 
