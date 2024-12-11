@@ -9,7 +9,7 @@ GIT_VERSION := $(shell git describe --always --tags --long --dirty | sed -e 's/\
 # Docker variables
 
 DOCKER_IMAGE_TAG ?= $(GIT_REPOSITORY_NAME):$(GIT_VERSION)
-DOCKER_IMAGE_NAME := senzing/git-action-slack-notification
+DOCKER_IMAGE_NAME := senzing-factory/github-action-slack-notification
 
 # -------------
 # TASKS

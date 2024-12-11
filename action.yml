@@ -1,9 +1,9 @@
-name: 'Git Action Slack Notification'
-description: 'Slack notification sent by Git Actions'
-author: 'Senzing'
+name: "GitHub Action Slack Notification"
+description: "Slack notification sent by GitHub Actions"
+author: "Senzing"
 branding:
-  icon: 'message-square'
-  color: 'purple'
+  icon: "message-square"
+  color: "purple"
 runs:
-  using: 'docker'
-  image: 'docker://senzing/git-action-slack-notification:1.0.0'
+  using: "docker"
+  image: "docker://senzing-factory/github-action-slack-notification:1.0.0"

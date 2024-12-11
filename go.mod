@@ -1,4 +1,4 @@
-module github.com/senzing/git-action-slack-notification
+module github.com/senzing-factory/github-action-slack-notification
 
 go 1.13
 

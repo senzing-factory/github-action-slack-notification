@@ -8,7 +8,7 @@ import (
 	"net/http"
 
 	"github.com/pkg/errors"
-	"github.com/senzing/git-action-slack-notification/configuration"
+	"github.com/senzing-factory/github-action-slack-notification/configuration"
 )
 
 type Message struct {
@@ -56,7 +56,8 @@ func (message *Message) Send(webhook string) error {
 	}
 
 	if response.StatusCode >= 299 {
-		err = fmt.Errorf(fmt.Sprintf("Exception: %s", response.Status))
+		formatted := fmt.Sprintf("Exception: %s", response.Status)
+		err = fmt.Errorf("%s", formatted)
 	}
 	fmt.Println(response.Status)
 

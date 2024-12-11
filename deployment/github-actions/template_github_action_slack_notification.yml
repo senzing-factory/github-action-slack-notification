@@ -1,5 +1,5 @@
 on: push
-name: Git Action Slack Notification Demo
+name: GitHub Action Slack Notification Demo
 jobs:
   slackNotification:
     name: Slack Notification Demo
@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Slack Notification Demo
-        uses: senzing/git-action-slack-notification@1.0.0
+        uses: senzing-factory/github-action-slack-notification@1.0.0
         env:
           GITHUB_ACTION: ${GITHUB_ACTION}
           GITHUB_ACTOR: ${GITHUB_ACTOR}
@@ -16,7 +16,7 @@ jobs:
           GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}
           GITHUB_WORKFLOW: ${GITHUB_WORKFLOW}
           SLACK_CHANNEL: demo-channel
-          SLACK_COLOR: '#efefef'
+          SLACK_COLOR: "#efefef"
           SLACK_ICON: https://github.com/<Github User>.png?size=48
           SLACK_MESSAGE: Demo'ing the Slack Notification
           SLACK_TITLE: Slack Notification Demo

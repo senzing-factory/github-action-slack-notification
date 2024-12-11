@@ -2,6 +2,7 @@
 extends: default
 
 rules:
+  braces: { min-spaces-inside: 0, max-spaces-inside: 2 }
   comments-indentation: disable
   line-length:
     level: warning
