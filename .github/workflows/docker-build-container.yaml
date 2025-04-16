@@ -27,6 +27,7 @@ jobs:
             GITHUB_HEAD_REF=${GITHUB_HEAD_REF:-${GITHUB_REF##*/}}
             GITHUB_EVENT_NAME=${GITHUB_EVENT_NAME}
           context: build/docker
+          dockerfile-path: build/docker/Dockerfile
           image-repository: senzing-factory/${{ steps.repo-basename.outputs.repo }}
           image-tag: ${{ github.ref_name }}
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
