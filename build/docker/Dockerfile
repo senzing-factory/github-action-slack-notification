@@ -31,7 +31,7 @@ RUN make build
 # -----------------------------------------------------------------------------
 # Stage: BUILD
 # -----------------------------------------------------------------------------
-FROM alpine:3.10
+FROM alpine:3.21
 
 LABEL "com.github.actions.icon"="message-square"
 LABEL "com.github.actions.color"="purple"
