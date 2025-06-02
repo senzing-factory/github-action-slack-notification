@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
-# Stage: BUILD
+# Stage: build
 # -----------------------------------------------------------------------------
-FROM golang:1.13.11-alpine3.10 as BUILD
+FROM golang:1.13.11-alpine3.10 AS build
 
 ARG GITHUB_HEAD_REF="master"
 ARG GITHUB_EVENT_NAME="push"
@@ -29,18 +29,18 @@ RUN git checkout ${GITHUB_HEAD_REF}; \
 RUN make build
 
 # -----------------------------------------------------------------------------
-# Stage: BUILD
+# Stage: build
 # -----------------------------------------------------------------------------
 FROM alpine:3.22
 
 LABEL "com.github.actions.icon"="message-square"
 LABEL "com.github.actions.color"="purple"
-LABEL "com.github.actions.name"="GitHub Aciton Slack Notification"
+LABEL "com.github.actions.name"="GitHub Action Slack Notification"
 LABEL "com.github.actions.description"="Send notification to Slack"
 
-COPY --from=BUILD /go/bin/github-action-slack-notification /usr/bin
-COPY --from=BUILD /go/src/github-action-slack-notification/LICENSE /
-COPY --from=BUILD /go/src/github-action-slack-notification/README.md /
+COPY --from=build /go/bin/github-action-slack-notification /usr/bin
+COPY --from=build /go/src/github-action-slack-notification/LICENSE /
+COPY --from=build /go/src/github-action-slack-notification/README.md /
 
 HEALTHCHECK CMD git --version || exit 1
 
