@@ -1,6 +1,6 @@
 # GitHub Action Slack Notification
 
-Git Action to send messages to Slack. This action can be used to send message about the status of a Git Action workflow.
+Github Action to send messages to Slack. This action can be used to send message about the status of a Github Action workflow.
 
 ## Usage
 
@@ -44,7 +44,7 @@ These are the environment variables that can be set to pass in additional inform
 | GITHUB_EVENT_NAME |    No    | GitHub Action event name variable passed from Git Actions |
 | GITHUB_REF        |    No    | GitHub reference variable passed from Git Actions         |
 | GITHUB_REPOSITORY |    No    | GitHub Repository variable passed from Git Actions        |
-| GITHUB_WORKFLOW   |    No    | GitHub Action workflow varaible passed from Git Actions   |
+| GITHUB_WORKFLOW   |    No    | GitHub Action workflow variable passed from Git Actions   |
 | SLACK_CHANNEL     |    No    | The Slack channel to use instead of the default           |
 | SLACK_COLOR       |    No    | Format color to use for the Slack message                 |
 | SLACK_ICON        |    No    | The Slack user icon to use instead of the default         |

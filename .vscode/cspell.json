@@ -1,0 +1,19 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "alnum",
+    "buildx",
+    "CCLA",
+    "CODEOWNER",
+    "DOCKERHUB",
+    "gofmt",
+    "ICLA",
+    "pydevproject",
+    "Senzing",
+    "stackoverflow",
+    "toplevel",
+    "unrequired"
+  ],
+  "ignorePaths": [".git/**"]
+}
