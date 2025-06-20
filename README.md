@@ -1,6 +1,6 @@
 # GitHub Action Slack Notification
 
-Github Action to send messages to Slack. This action can be used to send message about the status of a Github Action workflow.
+GitHub Action to send messages to Slack. This action can be used to send message about the status of a GitHub Action workflow.
 
 ## Usage
 
