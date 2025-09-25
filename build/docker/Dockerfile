@@ -31,7 +31,7 @@ RUN make build
 # -----------------------------------------------------------------------------
 # Stage: build
 # -----------------------------------------------------------------------------
-FROM alpine:3.22
+FROM alpine:3.22@sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
 
 LABEL "com.github.actions.icon"="message-square"
 LABEL "com.github.actions.color"="purple"
