@@ -17,7 +17,5 @@
     "toplevel",
     "unrequired"
   ],
-  "ignorePaths": [
-    ".git/**"
-  ]
+  "ignorePaths": [".git/**"]
 }
