@@ -2,20 +2,23 @@
   "version": "0.2",
   "language": "en",
   "words": [
-    "CCLA",
-    "CODEOWNER",
-    "DOCKERHUB",
-    "ICLA",
-    "Senzing",
     "alnum",
     "buildx",
+    "CCLA",
+    "CODEOWNER",
+    "cooldown",
+    "DOCKERHUB",
     "esbenp",
     "gofmt",
     "gomod",
+    "ICLA",
     "pydevproject",
+    "Senzing",
     "stackoverflow",
     "toplevel",
     "unrequired"
   ],
-  "ignorePaths": [".git/**"]
+  "ignorePaths": [
+    ".git/**"
+  ]
 }
