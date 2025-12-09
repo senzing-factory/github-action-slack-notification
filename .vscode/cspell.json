@@ -7,6 +7,7 @@
     "CCLA",
     "CODEOWNER",
     "cooldown",
+    "dockerfiles",
     "DOCKERHUB",
     "esbenp",
     "gofmt",
@@ -18,7 +19,5 @@
     "toplevel",
     "unrequired"
   ],
-  "ignorePaths": [
-    ".git/**"
-  ]
+  "ignorePaths": [".git/**"]
 }
