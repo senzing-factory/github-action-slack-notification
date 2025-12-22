@@ -7,6 +7,7 @@
   ],
   "enabledManagers": ["dockerfile", "docker-compose"],
   "schedule": ["on sunday"],
+  "prCreation": "not-pending",
   "packageRules": [
     {
       "matchUpdateTypes": ["major", "minor", "patch"],
