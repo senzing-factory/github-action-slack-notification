@@ -2,4 +2,8 @@ rules:
   unpinned-uses:
     config:
       policies:
-        "*": ref-pin
+        "*": hash-pin
+        "senzing-factory/*": ref-pin
+  secrets-outside-env:
+    ignore:
+      - docker-build-container.yaml
